@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gurudev Collection | Estd 1996</title>
-    <!-- Google Fonts for a clean, elegant look -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
@@ -12,7 +11,7 @@
         :root {
             --primary-teal: #0d3b44;
             --secondary-gold: #b38b59;
-            --bg-light: #fbfbfb;
+            --bg-light: #f7f7f7; /* Slightly softer background */
             --text-dark: #222222;
             --white: #ffffff;
         }
@@ -34,7 +33,7 @@
         header {
             background-color: var(--white);
             padding: 20px 5%;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -45,30 +44,21 @@
 
         .logo-container {
             text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
-        /* Fixed Logo Source */
+        /* Increased Logo Size and applied blend mode to remove the texture */
         .logo-img {
-            max-width: 250px;
+            max-width: 450px; /* ENLARGED LOGO */
+            width: 100%;
             height: auto;
-            margin-bottom: 10px;
+            mix-blend-mode: multiply; /* THIS FIXES THE TEXTURE MISMATCH */
         }
 
         .brand-name {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-teal);
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: none; /* Hidden since the logo image already has the text, but kept for screen readers */
-        }
-
-        .estd {
-            color: var(--secondary-gold);
-            font-size: 0.9rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-top: -10px;
+            display: none; /* Hidden for screen readers only */
         }
 
         /* --- Hero Section --- */
@@ -98,16 +88,23 @@
         .hero p {
             font-size: 1.1rem;
             max-width: 600px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 40px auto;
             color: #e0e0e0;
         }
 
-        /* Instagram Button */
-        .instagram-btn {
+        /* --- Social Links Group --- */
+        .social-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             color: var(--white);
             padding: 12px 25px;
             border-radius: 30px;
@@ -116,15 +113,28 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .instagram-btn:hover {
+        .social-btn:hover {
             transform: translateY(-3px);
+        }
+
+        .social-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        .instagram-btn:hover {
             box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4);
         }
 
-        .instagram-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
+        .whatsapp-btn {
+            background-color: #25D366; /* WhatsApp Green */
+        }
+        .whatsapp-btn:hover {
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
         }
 
         /* --- Section Defaults --- */
@@ -153,11 +163,11 @@
         /* --- Authorised Stockists --- */
         .stockists-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 20px;
             align-items: center;
             justify-items: center;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -176,6 +186,7 @@
             text-align: center;
             font-weight: 600;
             color: var(--primary-teal);
+            font-size: 0.95rem;
         }
 
         .brand-card:hover {
@@ -258,36 +269,48 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .hero .subtitle { font-size: 1rem; }
+            .logo-img { max-width: 300px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <div class="logo-container">
-            <!-- Exact file name referenced here -->
-            <img src="WhatsApp Image 2026-07-11 at 15.03.41 (1).jpeg" alt="Gurudev Collection Logo" class="logo-img">
             <h1 class="brand-name">Gurudev Collection</h1>
+            <img src="WhatsApp Image 2026-07-11 at 15.03.41 (1).jpeg" alt="Gurudev Collection Logo" class="logo-img">
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <h1>Welcome to Gurudev Collection</h1>
         <p class="subtitle">Wholesale Dealers in Hosiery, Readymade, Handlooms, and Seasonal</p>
         <p>Premium quality clothing and innerwear. Serving Chhatrapati Sambhajinagar with trust and excellence since 1996.</p>
         
-        <!-- Instagram Link -->
-        <a href="https://www.instagram.com/gurudev.collection.mh20?igsh=bDB5NnRkZWtqNmF5&utm_source=qr" target="_blank" rel="noopener noreferrer" class="instagram-btn">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-            </svg>
-            Follow us on Instagram
-        </a>
+        <div class="social-group">
+            <a href="https://www.instagram.com/gurudev.collection.mh20?igsh=bDB5NnRkZWtqNmF5&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-btn instagram-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                Follow us on Instagram
+            </a>
+
+            <a href="https://chat.whatsapp.com/DYurfK0hXtxJMv8UyGMTh4" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Join Men's Wear Group
+            </a>
+
+            <a href="https://chat.whatsapp.com/GLQIwAjZVFAJxNWaUnixsk" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Join Ladies' Wear Group
+            </a>
+        </div>
     </section>
 
-    <!-- Authorised Stockists Section -->
     <section id="stockists">
         <h2 class="section-title">Authorised Stockists</h2>
         <div class="stockists-grid">
@@ -301,10 +324,14 @@
             <div class="brand-card">SaRa Kids/Ethnic</div>
             <div class="brand-card">KROSS</div>
             <div class="brand-card">SAFE</div>
+            <div class="brand-card">Kavya dresses</div>
+            <div class="brand-card">S9 Jeans</div>
+            <div class="brand-card">V2 Jeans</div>
+            <div class="brand-card">Orange Shirts</div>
+            <div class="brand-card">NK Socks</div>
         </div>
     </section>
 
-    <!-- Contact & Location Section -->
     <section id="contact">
         <h2 class="section-title">Visit Us</h2>
         <div class="contact-container">
@@ -321,12 +348,11 @@
 
                 <div class="info-item contact-links">
                     <h4>Get in Touch</h4>
-                    <p><strong>Mr. Hardik Ramchandani:</strong> <a href="tel:+918956430706">+91 89564 30706</a></p>
                     <p><strong>Mr. Anil Ramchandani:</strong> <a href="tel:+919423741862">+91 94237 41862</a></p>
+                    <p><strong>Mr. Hardik Ramchandani:</strong> <a href="tel:+918956430706">+91 89564 30706</a></p>
                 </div>
             </div>
 
-            <!-- Google Maps Embed for Shahgunj area -->
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15009.68007421833!2d75.32115!3d19.883398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba2a259c471c5%3A0xc3c5d6e2e542ef99!2sShahgunj%2C%20Aurangabad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -334,9 +360,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Gurudev Collection. All Rights Reserved.</p>
+        <p>© 2026 Gurudev Collection. All Rights Reserved.</p>
     </footer>
 
 </body>
