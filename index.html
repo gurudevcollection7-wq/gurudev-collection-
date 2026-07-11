@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gurudev Collection | Estd 1996</title>
+    <!-- Google Fonts for a clean, elegant look -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
@@ -46,9 +47,9 @@
             text-align: center;
         }
 
-        /* Replace 'logo.jpg' with your actual logo file name once uploaded to GitHub */
+        /* Fixed Logo Source */
         .logo-img {
-            max-width: 200px;
+            max-width: 250px;
             height: auto;
             margin-bottom: 10px;
         }
@@ -59,6 +60,7 @@
             font-size: 2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            display: none; /* Hidden since the logo image already has the text, but kept for screen readers */
         }
 
         .estd {
@@ -66,6 +68,7 @@
             font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 1px;
+            margin-top: -10px;
         }
 
         /* --- Hero Section --- */
@@ -80,14 +83,48 @@
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-gold);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero p {
             font-size: 1.1rem;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 30px auto;
             color: #e0e0e0;
+        }
+
+        /* Instagram Button */
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .instagram-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4);
+        }
+
+        .instagram-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
         }
 
         /* --- Section Defaults --- */
@@ -146,13 +183,6 @@
             border-color: var(--secondary-gold);
         }
 
-        /* Placeholder for brand images - replace the text inside the div with an <img> tag */
-        .brand-img {
-            max-width: 100%;
-            max-height: 80px;
-            object-fit: contain;
-        }
-
         /* --- Contact & Location --- */
         .contact-container {
             display: flex;
@@ -190,6 +220,16 @@
         .info-item p {
             font-size: 1rem;
         }
+        
+        .contact-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--secondary-gold);
+        }
 
         .map-container {
             flex: 1;
@@ -217,25 +257,37 @@
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .brand-name { font-size: 1.5rem; }
+            .hero .subtitle { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <div class="logo-container">
-            <img src="logo.jpg" alt="Gurudev Collection Logo" class="logo-img">
-            <div class="brand-name">Gurudev Collection</div>
-            <div class="estd">ESTD 1996'</div>
+            <!-- Exact file name referenced here -->
+            <img src="WhatsApp Image 2026-07-11 at 15.03.41 (1).jpeg" alt="Gurudev Collection Logo" class="logo-img">
+            <h1 class="brand-name">Gurudev Collection</h1>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <h1>Welcome to Gurudev Collection</h1>
+        <p class="subtitle">Wholesale Dealers in Hosiery, Readymade, Handlooms, and Seasonal</p>
         <p>Premium quality clothing and innerwear. Serving Chhatrapati Sambhajinagar with trust and excellence since 1996.</p>
+        
+        <!-- Instagram Link -->
+        <a href="https://www.instagram.com/gurudev.collection.mh20?igsh=bDB5NnRkZWtqNmF5&utm_source=qr" target="_blank" rel="noopener noreferrer" class="instagram-btn">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+            Follow us on Instagram
+        </a>
     </section>
 
+    <!-- Authorised Stockists Section -->
     <section id="stockists">
         <h2 class="section-title">Authorised Stockists</h2>
         <div class="stockists-grid">
@@ -252,6 +304,7 @@
         </div>
     </section>
 
+    <!-- Contact & Location Section -->
     <section id="contact">
         <h2 class="section-title">Visit Us</h2>
         <div class="contact-container">
@@ -262,17 +315,18 @@
                 <div class="info-item">
                     <h4>Address</h4>
                     <p>Opp. AP Patel Petrol Pump, Shahgunj,<br>
-                    Chh. Sambhajinagar (Aurangabad),<br>
+                    Chh. Sambhajinagar,<br>
                     Maharashtra</p>
                 </div>
 
-                <div class="info-item">
+                <div class="info-item contact-links">
                     <h4>Get in Touch</h4>
-                    <p><strong>Mr. Hardik Ramchandani:</strong> <a href="tel:+918956430706" style="color: var(--text-dark); text-decoration: none;">+91 89564 30706</a></p>
-                    <p><strong>Mr. Anil Ramchandani:</strong> <a href="tel:+919423741862" style="color: var(--text-dark); text-decoration: none;">+91 94237 41862</a></p>
+                    <p><strong>Mr. Hardik Ramchandani:</strong> <a href="tel:+918956430706">+91 89564 30706</a></p>
+                    <p><strong>Mr. Anil Ramchandani:</strong> <a href="tel:+919423741862">+91 94237 41862</a></p>
                 </div>
             </div>
 
+            <!-- Google Maps Embed for Shahgunj area -->
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15009.68007421833!2d75.32115!3d19.883398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba2a259c471c5%3A0xc3c5d6e2e542ef99!2sShahgunj%2C%20Aurangabad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -280,6 +334,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Gurudev Collection. All Rights Reserved.</p>
     </footer>
