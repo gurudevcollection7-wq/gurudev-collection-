@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gurudev Collection | Estd 1996</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Color Scheme extracted from your logo */
+        :root {
+            --primary-teal: #0d3b44;
+            --secondary-gold: #b38b59;
+            --bg-light: #fbfbfb;
+            --text-dark: #222222;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--white);
+            padding: 20px 5%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            text-align: center;
+        }
+
+        /* Replace 'logo.jpg' with your actual logo file name once uploaded to GitHub */
+        .logo-img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-teal);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .estd {
+            color: var(--secondary-gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--primary-teal);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            border-bottom: 5px solid var(--secondary-gold);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #e0e0e0;
+        }
+
+        /* --- Section Defaults --- */
+        section {
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-teal);
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-gold);
+            margin: 15px auto 0;
+        }
+
+        /* --- Authorised Stockists --- */
+        .stockists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            align-items: center;
+            justify-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .brand-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary-teal);
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-gold);
+        }
+
+        /* Placeholder for brand images - replace the text inside the div with an <img> tag */
+        .brand-img {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        /* --- Contact & Location --- */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-teal);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .info-item {
+            margin-bottom: 20px;
+        }
+
+        .info-item h4 {
+            color: var(--secondary-gold);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-size: 1rem;
+        }
+
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--primary-teal);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .brand-name { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Gurudev Collection Logo" class="logo-img">
+            <div class="brand-name">Gurudev Collection</div>
+            <div class="estd">ESTD 1996'</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Gurudev Collection</h1>
+        <p>Premium quality clothing and innerwear. Serving Chhatrapati Sambhajinagar with trust and excellence since 1996.</p>
+    </section>
+
+    <section id="stockists">
+        <h2 class="section-title">Authorised Stockists</h2>
+        <div class="stockists-grid">
+            <div class="brand-card">AMUL COMFY</div>
+            <div class="brand-card">SPORTO</div>
+            <div class="brand-card">LUX INNERWEAR</div>
+            <div class="brand-card">Lyra</div>
+            <div class="brand-card">POOJA RAGENEE</div>
+            <div class="brand-card">ESSA</div>
+            <div class="brand-card">MY RULES SHIRTS</div>
+            <div class="brand-card">SaRa Kids/Ethnic</div>
+            <div class="brand-card">KROSS</div>
+            <div class="brand-card">SAFE</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Visit Us</h2>
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                
+                <div class="info-item">
+                    <h4>Address</h4>
+                    <p>Opp. AP Patel Petrol Pump, Shahgunj,<br>
+                    Chh. Sambhajinagar (Aurangabad),<br>
+                    Maharashtra</p>
+                </div>
+
+                <div class="info-item">
+                    <h4>Get in Touch</h4>
+                    <p><strong>Mr. Hardik Ramchandani:</strong> <a href="tel:+918956430706" style="color: var(--text-dark); text-decoration: none;">+91 89564 30706</a></p>
+                    <p><strong>Mr. Anil Ramchandani:</strong> <a href="tel:+919423741862" style="color: var(--text-dark); text-decoration: none;">+91 94237 41862</a></p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15009.68007421833!2d75.32115!3d19.883398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba2a259c471c5%3A0xc3c5d6e2e542ef99!2sShahgunj%2C%20Aurangabad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Gurudev Collection. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
